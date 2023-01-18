@@ -1,0 +1,316 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`it matches snapshot 1`] = `
+<div>
+  <div
+    class="Carousel"
+  >
+    <h1>
+      images for testing
+    </h1>
+    <div
+      class="Carousel-main"
+    >
+      <i
+        class="bi bi-arrow-left-circle"
+      />
+      <div
+        class="Card"
+      >
+        <h4
+          class="Card-title"
+        >
+          testing image 1
+        </h4>
+        <img
+          alt="testing image 1"
+          class="Card-image"
+          src="test1.com"
+        />
+        <small
+          class="Card-small"
+        >
+          Image 
+          1
+           of 
+          3
+          .
+        </small>
+      </div>
+      <i
+        class="bi bi-arrow-right-circle"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`matches next slide click 1`] = `
+<div>
+  <div
+    class="Carousel"
+  >
+    <h1>
+      images for testing
+    </h1>
+    <div
+      class="Carousel-main"
+    >
+      <i
+        class="bi bi-arrow-left-circle"
+      />
+      <div
+        class="Card"
+      >
+        <h4
+          class="Card-title"
+        >
+          testing image 2
+        </h4>
+        <img
+          alt="testing image 2"
+          class="Card-image"
+          src="test2.com"
+        />
+        <small
+          class="Card-small"
+        >
+          Image 
+          2
+           of 
+          3
+          .
+        </small>
+      </div>
+      <i
+        class="bi bi-arrow-right-circle"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`matches prev slide click 1`] = `
+<div>
+  <div
+    class="Carousel"
+  >
+    <h1>
+      images for testing
+    </h1>
+    <div
+      class="Carousel-main"
+    >
+      <i
+        class="bi bi-arrow-left-circle"
+      />
+      <div
+        class="Card"
+      >
+        <h4
+          class="Card-title"
+        >
+          testing image 2
+        </h4>
+        <img
+          alt="testing image 2"
+          class="Card-image"
+          src="test2.com"
+        />
+        <small
+          class="Card-small"
+        >
+          Image 
+          2
+           of 
+          3
+          .
+        </small>
+      </div>
+      <i
+        class="bi bi-arrow-right-circle"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`snapshot matches next slide click 1`] = `
+<div>
+  <div
+    class="Carousel"
+  >
+    <h1>
+      images for testing
+    </h1>
+    <div
+      class="Carousel-main"
+    >
+      <i
+        class="bi bi-arrow-left-circle"
+      />
+      <div
+        class="Card"
+      >
+        <h4
+          class="Card-title"
+        >
+          testing image 2
+        </h4>
+        <img
+          alt="testing image 2"
+          class="Card-image"
+          src="test2.com"
+        />
+        <small
+          class="Card-small"
+        >
+          Image 
+          2
+           of 
+          3
+          .
+        </small>
+      </div>
+      <i
+        class="bi bi-arrow-right-circle"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`snapshot matches prev slide click 1`] = `
+<div>
+  <div
+    class="Carousel"
+  >
+    <h1>
+      images for testing
+    </h1>
+    <div
+      class="Carousel-main"
+    >
+      <i
+        class="bi bi-arrow-left-circle"
+      />
+      <div
+        class="Card"
+      >
+        <h4
+          class="Card-title"
+        >
+          testing image 2
+        </h4>
+        <img
+          alt="testing image 2"
+          class="Card-image"
+          src="test2.com"
+        />
+        <small
+          class="Card-small"
+        >
+          Image 
+          2
+           of 
+          3
+          .
+        </small>
+      </div>
+      <i
+        class="bi bi-arrow-right-circle"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`works when you click on the left arrow 1`] = `
+<div>
+  <div
+    class="Carousel"
+  >
+    <h1>
+      images for testing
+    </h1>
+    <div
+      class="Carousel-main"
+    >
+      <i
+        class="bi bi-arrow-left-circle"
+      />
+      <div
+        class="Card"
+      >
+        <h4
+          class="Card-title"
+        >
+          testing image 1
+        </h4>
+        <img
+          alt="testing image 1"
+          class="Card-image"
+          src="test1.com"
+        />
+        <small
+          class="Card-small"
+        >
+          Image 
+          1
+           of 
+          3
+          .
+        </small>
+      </div>
+      <i
+        class="bi bi-arrow-right-circle"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`works when you click on the right arrow 1`] = `
+<div>
+  <div
+    class="Carousel"
+  >
+    <h1>
+      images for testing
+    </h1>
+    <div
+      class="Carousel-main"
+    >
+      <i
+        class="bi bi-arrow-left-circle"
+      />
+      <div
+        class="Card"
+      >
+        <h4
+          class="Card-title"
+        >
+          testing image 2
+        </h4>
+        <img
+          alt="testing image 2"
+          class="Card-image"
+          src="test2.com"
+        />
+        <small
+          class="Card-small"
+        >
+          Image 
+          2
+           of 
+          3
+          .
+        </small>
+      </div>
+      <i
+        class="bi bi-arrow-right-circle"
+      />
+    </div>
+  </div>
+</div>
+`;
