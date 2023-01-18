@@ -2,6 +2,24 @@ import { render, fireEvent } from "@testing-library/react";
 import Carousel from "./Carousel";
 import TEST_IMAGES from "./_testCommon.js";
 
+/** Click right arrow n times */
+
+function moveForward(container, n) {
+  const rightArrow = container.querySelector('.bi-arrow-right-circle');
+  for (let i = 0; i < n; i++) {
+    fireEvent.click(rightArrow);
+  }
+}
+
+/** Click left arrow n times */
+
+function moveBackward(container, n) {
+  const leftArrow = container.querySelector('.bi-arrow-left-circle');
+  for (let i = 0; i < n; i++) {
+    fireEvent.click(leftArrow);
+  }
+}
+
 it("renders without crashing", function () {
   render(<Carousel photos={TEST_IMAGES} title="images for testing" />);
 });
@@ -13,24 +31,6 @@ it("it matches snapshot", function () {
 
   expect(container).toMatchSnapshot();
 });
-
-// it("snapshot matches next slide click", function () {
-//   const { container } = render(
-//     <Carousel photos={TEST_IMAGES} title="images for testing" />
-//   );
-
-//   fireEvent.click(container.querySelector(".bi-arrow-right-circle"))
-//   expect(container).toMatchSnapshot();
-// });
-
-// it("snapshot matches prev slide click", function () {
-//   const { container } = render(
-//     <Carousel photos={TEST_IMAGES} title="images for testing" />
-//   );
-
-//   fireEvent.click(container.querySelector(".bi-arrow-left-circle"))
-//   expect(container).toMatchSnapshot();
-// });
 
 it("works when you click on the right arrow", function () {
   const { container } = render(
@@ -45,8 +45,7 @@ it("works when you click on the right arrow", function () {
   ).not.toBeInTheDocument();
 
   // move forward in the carousel
-  const rightArrow = container.querySelector(".bi-arrow-right-circle");
-  fireEvent.click(rightArrow);
+  moveForward(container, 1);
 
   // expect the second image to show, but not the first
   expect(
@@ -59,13 +58,13 @@ it("works when you click on the right arrow", function () {
   expect(container).toMatchSnapshot();
 });
 
-it("works when you click on the left arrow", function(){
+it("works when you click on the left arrow", function () {
   const { container } = render(
     <Carousel photos={TEST_IMAGES} title="images for testing" />
   );
   // move forward in the carousel
-  const rightArrow = container.querySelector(".bi-arrow-right-circle");
-  fireEvent.click(rightArrow);
+  moveForward(container, 1);
+
   // expect the second image to show, but not the first
   expect(
     container.querySelector('img[alt="testing image 1"]')
@@ -75,8 +74,8 @@ it("works when you click on the left arrow", function(){
   ).toBeInTheDocument();
 
   // move backward in the carousel
-  const leftArrow = container.querySelector(".bi-arrow-left-circle");
-  fireEvent.click(leftArrow);
+  moveBackward(container, 1);
+
   // expect the first image to show, but not the second
   expect(
     container.querySelector('img[alt="testing image 1"]')
@@ -86,25 +85,30 @@ it("works when you click on the left arrow", function(){
   ).not.toBeInTheDocument();
 
   expect(container).toMatchSnapshot();
-})
+});
 
-it("hides the left arrow if on first image", function(){
+it("hides the left arrow if on first image", function () {
   const { container } = render(
     <Carousel photos={TEST_IMAGES} title="images for testing" />
   );
   const leftArrow = container.querySelector(".bi-arrow-left-circle");
-  expect(leftArrow).not.toBeInTheDocument();
-})
+  const rightArrow = container.querySelector(".bi-arrow-right-circle");
 
-it("hides the right arrow if on last image", function(){
+  expect(leftArrow).not.toBeInTheDocument();
+  // expect(rightArrow).toBeInTheDocument(); // Requires some fixing with the visibility
+});
+
+it("hides the right arrow if on last image", function () {
   const { container } = render(
     <Carousel photos={TEST_IMAGES} title="images for testing" />
   );
 
   // move forward in the carousel
+  moveForward(container, 2)
+
+  const leftArrow = container.querySelector(".bi-arrow-left-circle");
   const rightArrow = container.querySelector(".bi-arrow-right-circle");
-  fireEvent.click(rightArrow);
-  fireEvent.click(rightArrow);
 
   expect(rightArrow).not.toBeInTheDocument();
-})
+  // expect(leftArrow).toBeInTheDocument();
+});

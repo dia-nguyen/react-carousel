@@ -30,6 +30,9 @@ import Card from "./Card";
     setCurrCardIdx(currCardIdx - 1);
   }
 
+  const atFirstImage = currCardIdx === 0;
+  const atLastImage = currCardIdx === total - 1;
+
   return (
     <div className="Carousel">
       <h1>{title}</h1>
@@ -37,6 +40,7 @@ import Card from "./Card";
         <i
           className="bi bi-arrow-left-circle"
           onClick={goBackward}
+          style={{ visibility: atFirstImage ? 'hidden' : 'visible' }}
         />
         <Card
           caption={currCard.caption}
@@ -47,6 +51,7 @@ import Card from "./Card";
         <i
           className="bi bi-arrow-right-circle"
           onClick={goForward}
+          style={{ visibility: atLastImage ? 'hidden' : 'visible' }}
         />
       </div>
     </div>
